@@ -19,20 +19,12 @@ class MainViewModelTest {
     }
 
     @Test
-    fun `(Given) 메인 화면에 진입 시 (When) x (Then) 'btn을 선택 해 주세요' 텍스트 표시`() {
-        val expectedResult = "btn을 선택 해 주세요"
-        viewModel.unClickedEvent.observeForever {
-            Assert.assertEquals(expectedResult, it)
-        }
-    }
-
-    @Test
     fun `(Given) 메인 화면에 진입한 상태에서 (When) 1번째 버튼 클릭 시 (Then) 'btn1이 선택되었습니다' 텍스트를 표시`() {
         val expectedResult = "btn1이 선택되었습니다"
         viewModel.clickButtonAEvent.observeForever {
             Assert.assertEquals(expectedResult, it)
         }
-        viewModel.onClick1()
+        viewModel.onClickBtn("btn1")
     }
 
     @Test
@@ -41,7 +33,7 @@ class MainViewModelTest {
         viewModel.clickButtonAEvent.observeForever {
             Assert.assertEquals(expectedResult, it)
         }
-        viewModel.onClick2()
+        viewModel.onClickBtn("btn2")
     }
 
     @Test
@@ -50,6 +42,6 @@ class MainViewModelTest {
         viewModel.clickButtonAEvent.observeForever {
             Assert.assertEquals(expectedResult, it)
         }
-        viewModel.onClick3()
+        viewModel.onClickBtn("btn3")
     }
 }
