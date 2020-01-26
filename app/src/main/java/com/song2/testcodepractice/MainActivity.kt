@@ -1,7 +1,7 @@
 package com.song2.testcodepractice
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.song2.testcodepractice.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding : ActivityMainBinding
     private val viewModel = MainViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,12 +32,12 @@ class MainActivity : AppCompatActivity() {
         initClickListener()
     }
 
-    private fun initClickListener() {
+    private fun initClickListener(){
 
-        with(binding) {
-            btn_1.setOnClickListener { viewModel.onClickBtn(getString(R.string.btn1)) }
-            btn_2.setOnClickListener { viewModel.onClickBtn(getString(R.string.btn2)) }
-            btn_3.setOnClickListener { viewModel.onClickBtn(getString(R.string.btn3)) }
+        with(binding){
+            btn_1.setOnClickListener { viewModel.onClickBtn(getString(R.string.btn1))}
+            btn_2.setOnClickListener { viewModel.onClickBtn(getString(R.string.btn2))}
+            btn_3.setOnClickListener { viewModel.onClickBtn(getString(R.string.btn3))}
         }
     }
 }
